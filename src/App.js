@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import Footer from './components/Footer';
+import Forms from './components/Forms';
+import LandingPage from './components/LandingPage';
+import Lists from './components/Lists';
+import Navbar from './components/Navbar';
+import State from './components/State';
 
-function App() {
+// Lists and keys
+// state
+// Events
+// forms
+
+
+function App() 
+{
+  let name = "Kelvin"
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-light">
+       <Navbar />
+       <LandingPage myname={name} />
+       <Forms />
+       <State/>
+       <Lists />
+       <Footer/>
     </div>
   );
 }
