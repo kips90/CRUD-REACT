@@ -1,7 +1,7 @@
 import { useState } from "react"
 
 export default function Forms() {
-
+    const [onchange,setOnchange] = useState()
     const [email,setEmail ] = useState()
     const [password,setPassword ] = useState()
 
@@ -9,6 +9,15 @@ export default function Forms() {
         e.preventDefault()
 
        console.log("submitted")
+      //  fetch("local/", {
+      //    body
+      //  })
+      //   .then((res)=> res.json())
+      //   .then((res)=>{
+      //       setData(res)
+      //       setLoading(false)
+      //   })
+      setOnchange(true)
 
     }
 
@@ -21,11 +30,11 @@ export default function Forms() {
          <form onSubmit={formSubmit}>
             <div class="mb-3">
                 <label class="form-label">Email address</label>
-                <input type="email" required onChange={(e)=>setEmail(e.target.value)} class="form-control" />
+                <input type="email" required value={email || "" } onChange={(e)=>setEmail(e.target.value)} class="form-control" />
             </div>
             <div class="mb-3">
                 <label class="form-label">Password</label>
-                <input type="password" required onChange={(event)=>setPassword(event.target.value)} class="form-control"  />
+                <input type="password" value={password || ""} required onChange={(event)=>setPassword(event.target.value)} class="form-control"  />
             </div>
             
             <button type="submit" class="btn btn-success">Submit</button>
