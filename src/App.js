@@ -1,35 +1,30 @@
 import './App.css';
-import DataFetch from './components/DataFetch';
-import Footer from './components/Footer';
-import Forms from './components/Forms';
-import LandingPage from './components/LandingPage';
-import Lists from './components/Lists';
-import Navbar from './components/Navbar';
-import State from './components/State';
-import { useEffect } from 'react';
 
-// Lists and keys
-// state
-// Events
-// forms
-
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Layout from './layout/Layout';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import Home from './pages/Home';
+import SingleBlog from './pages/SingleBlog';
+import AddBlog from './pages/AddBlog';
 
 function App() 
 {
-  let name = "Kelvin"
 
- 
 
   return (
-    <div className="bg-light">
-       <Navbar />
-       <LandingPage myname={name} />
-       <DataFetch/>
-       <Forms />
-       <State/>
-       <Lists />
-       <Footer/>
-    </div>
+   <BrowserRouter>
+   <Routes>
+    <Route path='/' element={<Layout/> } > 
+       <Route index element={<Home />} />
+       <Route path='about' element={<About />} />
+       <Route path='addblog' element={<AddBlog />} />
+
+       <Route path='blogs/:id' element={<SingleBlog />} />
+       <Route path='contact' element={<Contact />} />
+    </Route>
+   </Routes>
+   </BrowserRouter>
   );
 }
 

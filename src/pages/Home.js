@@ -1,13 +1,15 @@
 import React from 'react'
-import Navbar from '../components/Navbar'
-import Footer from '../components/Footer'
+import Navbar from '../layout/Navbar'
+import Footer from '../layout/Footer'
+import LandingPage from '../components/LandingPage'
+import Blogs from '../components/Blogs'
 
-export default function Home({name, cohort}) {
+export default function Home() {
   return (
     <div>
-        <Navbar cohort={cohort}/>
+      <LandingPage/>
+      <Blogs/>
         
-        <Footer/>
     </div>
   )
 }
